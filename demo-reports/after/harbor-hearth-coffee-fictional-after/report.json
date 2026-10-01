@@ -1,0 +1,33 @@
+{
+  "site": {
+    "brand": "Harbor & Hearth Coffee (fictional) - AFTER",
+    "url": "http://localhost:8765/after/index.html",
+    "pages": [
+      "http://localhost:8765/after/index.html"
+    ]
+  },
+  "scannedAt": "2026-09-29 21:23 UTC",
+  "isShopify": null,
+  "statement": null,
+  "pages": [
+    {
+      "label": "Home",
+      "url": "http://localhost:8765/after/index.html",
+      "ok": true,
+      "finalUrl": "http://localhost:8765/after/index.html",
+      "title": "Harbor & Hearth Coffee (fictional demo store)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 25,
+      "extra": {
+        "overlay": null,
+        "skipLink": true,
+        "lang": "en",
+        "viewport": "width=device-width, initial-scale=1",
+        "images": 5,
+        "imagesNoAlt": 0
+      }
+    }
+  ],
+  "rules": []
+}

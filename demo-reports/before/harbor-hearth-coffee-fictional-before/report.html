@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Snapshot: Harbor &amp; Hearth Coffee (fictional) - BEFORE</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--mut:#5d5b55;--line:#e3e0d8;--card:#fff;--crit:#a11d2b;--ser:#b4530a;--mod:#7a6a00;--min:#4b5563;--acc:#1f4e79}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#eceae4;--mut:#a7a49c;--line:#34332f;--card:#1e1e1b;--crit:#f07b86;--ser:#f0a35c;--mod:#e0cf5a;--min:#a9b1bd;--acc:#8cb8e6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:32px 16px 64px}h1{font-size:1.7rem;margin:0 0 4px}h2{margin-top:40px;font-size:1.2rem;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--mut);margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card b{display:block;font-size:1.6rem}.card span{color:var(--mut);font-size:.85rem}
+.issue{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--min);border-radius:8px;padding:14px 16px;margin:12px 0}
+.issue.critical{border-left-color:var(--crit)}.issue.serious{border-left-color:var(--ser)}.issue.moderate{border-left-color:var(--mod)}
+.ih{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.ih h3{margin:0;font-size:1.02rem;flex:1 1 300px}.n{color:var(--mut);font-size:.85rem}
+.badge{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;font-weight:700;padding:2px 7px;border-radius:99px;border:1px solid currentColor}
+.badge.critical{color:var(--crit)}.badge.serious{color:var(--ser)}.badge.moderate{color:var(--mod)}.badge.minor{color:var(--min)}
+.ref{color:var(--mut);font-size:.85rem}code{font-size:.82rem;word-break:break-all}a{color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}td a{word-break:break-all}
+.note{background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:12px 14px;color:var(--mut);font-size:.9rem}.pg{font-weight:600}
+footer{margin-top:40px;color:var(--mut);font-size:.85rem}
+</style></head><body><main>
+<p class="sub">Accessibility Snapshot</p>
+<h1>Harbor &amp; Hearth Coffee (fictional) - BEFORE</h1>
+<p class="sub">http://localhost:8765 · scanned 2026-09-29 21:23 UTC · WCAG 2.2 A/AA automated rules</p>
+<div class="grid">
+<div class="card"><b>29</b><span>failing elements across 1 page</span></div>
+<div class="card"><b>10</b><span>distinct issue types</span></div>
+<div class="card"><b>28</b><span>critical or serious</span></div>
+<div class="card"><b>n/a</b><span>accessibility statement</span></div>
+</div>
+<h2>Quick checks</h2>
+<table><tr><th>Check</th><th>Result</th></tr>
+<tr><td>Platform</td><td>Not checked (explicit page list)</td></tr>
+<tr><td>Accessibility statement</td><td>Not checked (explicit page list)</td></tr>
+<tr><td>Overlay / widget detected</td><td>None detected</td></tr>
+<tr><td>"Skip to content" link</td><td>Missing on at least one page</td></tr>
+<tr><td>Mobile pinch-zoom</td><td>Blocked on at least one page</td></tr>
+</table>
+<h2>Issues found (most severe first)</h2>
+<section class="issue critical">
+      <div class="ih"><span class="badge critical">critical</span><h3>Images must have alternative text</h3><span class="n">5 elements · Home</span></div>
+      <p><b>What it means:</b> Images have no text alternative, so product photos and banners are announced as &quot;image&quot; or a file name.</p>
+      <p><b>Who it affects:</b> Screen-reader users</p>
+      <p><b>Typical fix:</b> Add alt text in Shopify admin (Products &gt; media &gt; &quot;Add alt text&quot;) and to theme images; use alt=&quot;&quot; for purely decorative images.</p>
+      <p class="ref">WCAG 1.1.1 · rule <code>image-alt</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>img[src$=&quot;logo.png&quot;]</code></li><li><span class="pg">Home</span> <code>img[src$=&quot;hero1.jpg&quot;]</code></li><li><span class="pg">Home</span> <code>img[src$=&quot;p1.jpg&quot;]</code></li></ul></details>
+    </section>
+<section class="issue critical">
+      <div class="ih"><span class="badge critical">critical</span><h3>Buttons must have discernible text</h3><span class="n">2 elements · Home</span></div>
+      <p><b>What it means:</b> Some buttons have no readable name (quantity +/−, close, slider arrows, menu toggles).</p>
+      <p><b>Who it affects:</b> Screen-reader and voice-control users</p>
+      <p><b>Typical fix:</b> Add aria-label or visually hidden text to icon-only buttons in the theme snippets.</p>
+      <p class="ref">WCAG 4.1.2 · rule <code>button-name</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/button-name?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>.next</code></li><li><span class="pg">Home</span> <code>.qty &gt; button:nth-child(3)</code></li></ul></details>
+    </section>
+<section class="issue critical">
+      <div class="ih"><span class="badge critical">critical</span><h3>Form elements must have labels</h3><span class="n">1 element · Home</span></div>
+      <p><b>What it means:</b> Form fields (newsletter, search, quantity) have no programmatic label, so users hear &quot;edit text&quot; with no purpose.</p>
+      <p><b>Who it affects:</b> Screen-reader users</p>
+      <p><b>Typical fix:</b> Associate a &lt;label&gt; with each field or add aria-label; placeholder text alone is not a label.</p>
+      <p class="ref">WCAG 4.1.2 · rule <code>label</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/label?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>input[type=&quot;number&quot;]</code></li></ul></details>
+    </section>
+<section class="issue critical">
+      <div class="ih"><span class="badge critical">critical</span><h3>Select element must have an accessible name</h3><span class="n">1 element · Home</span></div>
+      <p><b>What it means:</b> Drop-downs (variant or sort selectors) have no label.</p>
+      <p><b>Who it affects:</b> Screen-reader users</p>
+      <p><b>Typical fix:</b> Add a &lt;label for&gt; or aria-label to each &lt;select&gt;.</p>
+      <p class="ref">WCAG 4.1.2 · rule <code>select-name</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/select-name?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>select</code></li></ul></details>
+    </section>
+<section class="issue serious">
+      <div class="ih"><span class="badge serious">serious</span><h3>Links must have discernible text</h3><span class="n">8 elements · Home</span></div>
+      <p><b>What it means:</b> Some links have no readable name (often icon-only links such as social icons, cart or logo links).</p>
+      <p><b>Who it affects:</b> Screen-reader and voice-control users</p>
+      <p><b>Typical fix:</b> Give icon links a visually hidden label or aria-label, e.g. &quot;Instagram&quot;, &quot;Cart (2 items)&quot;.</p>
+      <p class="ref">WCAG 2.4.4, 4.1.2 · rule <code>link-name</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/link-name?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>a[href=&quot;/&quot;]</code></li><li><span class="pg">Home</span> <code>a[href$=&quot;search&quot;]</code></li><li><span class="pg">Home</span> <code>a[href$=&quot;account&quot;]</code></li></ul></details>
+    </section>
+<section class="issue serious">
+      <div class="ih"><span class="badge serious">serious</span><h3>Elements must meet minimum color contrast ratio thresholds</h3><span class="n">5 elements · Home</span></div>
+      <p><b>What it means:</b> Text does not have enough contrast against its background (WCAG AA needs 4.5:1 for normal text).</p>
+      <p><b>Who it affects:</b> Low-vision and older shoppers, anyone on a phone in sunlight</p>
+      <p><b>Typical fix:</b> Adjust theme colour settings or the specific CSS for the flagged text (prices, badges, footer links are common).</p>
+      <p class="ref">WCAG 1.4.3 · rule <code>color-contrast</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>span</code></li><li><span class="pg">Home</span> <code>.card:nth-child(1) &gt; .price</code></li><li><span class="pg">Home</span> <code>.card:nth-child(2) &gt; .price</code></li></ul></details>
+    </section>
+<section class="issue serious">
+      <div class="ih"><span class="badge serious">serious</span><h3>All touch targets must be 24px large, or leave sufficient space</h3><span class="n">4 elements · Home</span></div>
+      <p><b>What it means:</b> Tap targets are smaller than 24×24 px and too close together (WCAG 2.2).</p>
+      <p><b>Who it affects:</b> Shoppers with motor impairments, most mobile users</p>
+      <p><b>Typical fix:</b> Increase padding on small icons and links.</p>
+      <p class="ref">WCAG 2.5.8 · rule <code>target-size</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/target-size?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>li:nth-child(1) &gt; a[href=&quot;#&quot;]</code></li><li><span class="pg">Home</span> <code>div &gt; a[href=&quot;#&quot;]</code></li><li><span class="pg">Home</span> <code>li:nth-child(3) &gt; a[href=&quot;#&quot;]</code></li></ul></details>
+    </section>
+<section class="issue serious">
+      <div class="ih"><span class="badge serious">serious</span><h3>&lt;html&gt; element must have a lang attribute</h3><span class="n">1 element · Home</span></div>
+      <p><b>What it means:</b> The page does not declare its language, so it may be read with the wrong pronunciation.</p>
+      <p><b>Who it affects:</b> Screen-reader users</p>
+      <p><b>Typical fix:</b> Set lang on the &lt;html&gt; element in theme.liquid.</p>
+      <p class="ref">WCAG 3.1.1 · rule <code>html-has-lang</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/html-has-lang?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>html</code></li></ul></details>
+    </section>
+<section class="issue serious">
+      <div class="ih"><span class="badge serious">serious</span><h3>&lt;ul&gt; and &lt;ol&gt; must only directly contain &lt;li&gt;, &lt;script&gt; or &lt;template&gt; elements</h3><span class="n">1 element · Home</span></div>
+      <p><b>What it means:</b> Lists contain elements other than list items, so item counts are announced wrongly.</p>
+      <p><b>Who it affects:</b> Screen-reader users</p>
+      <p><b>Typical fix:</b> Only place &lt;li&gt; elements directly inside &lt;ul&gt;/&lt;ol&gt;.</p>
+      <p class="ref">WCAG 1.3.1 · rule <code>list</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/list?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>ul</code></li></ul></details>
+    </section>
+<section class="issue moderate">
+      <div class="ih"><span class="badge moderate">moderate</span><h3>Zooming and scaling must not be disabled</h3><span class="n">1 element · Home</span></div>
+      <p><b>What it means:</b> Pinch-zoom is disabled on mobile.</p>
+      <p><b>Who it affects:</b> Low-vision mobile shoppers</p>
+      <p><b>Typical fix:</b> Remove maximum-scale=1 / user-scalable=no from the viewport meta tag.</p>
+      <p class="ref">WCAG 1.4.4 · rule <code>meta-viewport</code> · <a href="https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axeAPI">reference</a></p>
+      <details><summary>Example locations</summary><ul><li><span class="pg">Home</span> <code>meta[name=&quot;viewport&quot;]</code></li></ul></details>
+    </section>
+<h2>Pages scanned</h2>
+<table><tr><th>Page</th><th>URL</th><th>Failing elements</th></tr><tr><td>Home</td><td><a href="http://localhost:8765/before/index.html">http://localhost:8765/before/index.html</a></td><td>29</td></tr></table>
+<h2>What this snapshot is and is not</h2>
+<div class="note">This is an automated scan of 1 key page using the open-source axe-core engine. Automated tools catch only part of WCAG issues; keyboard navigation, screen-reader flow, checkout, and content quality need manual testing. It is a technical report, not legal advice, and it does not certify compliance with the ADA, the European Accessibility Act, or any other law.</div>
+<footer></footer>
+</main></body></html>

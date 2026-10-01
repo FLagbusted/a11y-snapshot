@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor &amp; Hearth Coffee (fictional demo store)</title>
+<style>body{font-family:Georgia,serif;margin:0;background:#fff;color:#333}.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:6px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#f4efe6}
+.icons a{margin-left:12px;display:inline-block;min-width:24px;min-height:24px;color:#4a3526}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero img{width:100%;height:320px;object-fit:cover;background:#c9b79c;display:block}.slide[hidden]{display:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:24px;list-style:none;margin:0}.card img{width:100%;height:180px;background:#d8cbb6;display:block}
+.price{color:#595048}.badge{background:#8a4b08;color:#fff;font-size:12px;padding:2px 6px}.qty button,.prev,.next{min-width:28px;min-height:28px}
+nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}nav a{display:inline-block;padding:6px 4px}footer{background:#2b2522;color:#e8e1d9;padding:24px}footer a{color:#f4d9a8}</style></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a href="/"><img src="logo.png" width="140" height="40" alt="Harbor &amp; Hearth Coffee home"></a>
+<nav aria-label="Main"><ul><li><a href="#">Shop</a></li><li><a href="#">Subscriptions</a></li><li><a href="#">Our story</a></li></ul></nav>
+<div class="icons"><a href="/search"><span class="sr">Search</span>&#9906;</a><a href="/account"><span class="sr">Account</span>&#9786;</a><a href="/cart"><span class="sr">Cart, 0 items</span>&#128722;</a></div></header>
+<main id="main">
+<div class="hero"><div class="slide"><img src="hero1.jpg" alt="Fresh coffee beans pouring from the roaster drum"></div><div class="slide" hidden><a href="/collections/new">New arrivals</a></div>
+<button class="prev" aria-label="Previous slide">&lsaquo;</button><button class="next" aria-label="Next slide"><svg width="12" height="12" aria-hidden="true"><path d="M0 0l12 6-12 6z"/></svg></button></div>
+<h1>Fresh roasted this week</h1>
+<ul class="grid">
+<li class="card"><a href="/products/sunrise"><img src="p1.jpg" alt="Sunrise Blend 12 oz bag"></a><span class="badge">Sale</span><p>Sunrise Blend</p><p class="price">$18.00</p>
+<div class="qty"><button aria-label="Decrease quantity">-</button><label class="sr" for="q1">Quantity</label><input id="q1" type="number" value="1"><button aria-label="Increase quantity"><svg width="10" height="10" aria-hidden="true"><path d="M5 0v10M0 5h10" stroke="#000"/></svg></button></div></li>
+<li class="card"><a href="/products/midnight"><img src="p2.jpg" alt="Midnight Espresso 12 oz bag"></a><p>Midnight Espresso</p><p class="price">$21.00</p><label for="s2">Size</label> <select id="s2"><option>12 oz</option><option>2 lb</option></select></li>
+<li class="card"><a href="/products/decaf"><img src="p3.jpg" alt="Swiss Water Decaf 12 oz bag"></a><p>Swiss Water Decaf</p><p class="price">$19.00</p></li>
+</ul></main>
+<footer><form><label for="nl">Email for roast-day updates</label> <input id="nl" type="email" autocomplete="email"><button>Subscribe</button></form>
+<a href="https://instagram.com"><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg><span class="sr">Instagram</span></a>
+<p>&copy; Harbor &amp; Hearth Coffee — a fictional store used to demonstrate an accessibility audit.</p></footer>
+</body></html>
